@@ -1,0 +1,75 @@
+Podsistem 1
+	[ Mesto ]
+		- id (PK)
+		- naziv
+
+	[ Korisnik ]
+		- id (PK)
+		- ime
+		- email
+		- godiste
+		- pol
+		- mesto_id (FK → Mesto.id)
+
+Podsistem 2
+	[ Kategorija ]
+		- id (PK)
+		- naziv
+
+	[ AudioSnimak ]
+		- id (PK)
+		- naziv
+		- trajanje
+		- datum_postavljanja
+		- vlasnik_id (FK → Korisnik.id)
+	
+	[ AudioSnimak_Kategorija ]
+		- audio_id (FK → AudioSnimak.id)
+		- kategorija_id (FK → Kategorija.id)
+		PK: (audio_id, kategorija_id)
+	
+	[ Korisnik ]
+		- id (PK)
+		- ...
+
+Podsistem 3
+	[ Paket ]
+		- id (PK)
+		- naziv
+		- trenutna_cena
+
+	[ Pretplata ]
+		- id (PK)
+		- korisnik_id (FK → Korisnik.id)
+		- paket_id (FK → Paket.id)
+		- datum_pocetka
+		- cena
+
+	[ Slusanje ]
+		- id (PK)
+		- korisnik_id (FK → Korisnik.id)
+		- audio_id (FK → AudioSnimak.id)
+		- pocetak_vreme
+		- sekundi_od
+		- sekundi_trajanje
+	
+	[ Ocena ]
+		- korisnik_id (FK → Korisnik.id)
+		- audio_id (FK → AudioSnimak.id)
+		- ocena (1-5)
+		- datum_vreme
+		PK: (korisnik_id, audio_id)
+	
+	[ Omiljeni ]
+		- korisnik_id (FK → Korisnik.id)
+		- audio_id (FK → AudioSnimak.id)
+		PK: (korisnik_id, audio_id)
+	
+	[ Korisnik ]
+		- id (PK)
+		- ...
+
+	[ AudioSnimak ]
+		- id (PK)
+		- ...
+

@@ -1,0 +1,31 @@
+Potrebni alati i podesavanja:
+
+- Java JDK 1.8
+	- Dostupno na linku: https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html
+
+- Apache NetBeans IDE 14
+	- Dostupno na linku: https://netbeans.apache.org/download/nb14/index.html
+
+- Glassfish 5.0.1 
+	- Preuzeti iz Netbeans-a (Services>Servers>Add Server>)
+	- Potrebno je napraviti JDBC Connection Pool i JDBC Resource kako biste se iz glassfisha povezali na bazu. 
+	- Tu konekciju referencirati iz persistence.xml fajla
+	- Parametri korisceni za jdbc connection pool:
+		Datasource Classname: com.mysql.cj.jdbc.MysqlDataSource (preuzeti najnoviji jdbc konektor)
+		serverName: localhost
+		portNumber: 3306
+		databaseName: kzp
+		user: admin (ukoliko pravite drugi nalog obavezno dodeliti DBA privilegije)
+		password: 123 (mora da postoji - podesiti iz MySQL Workbench>Admnistration>Users And Privileges)
+		useSSL: false
+		serverTimezone: UTC
+
+- Postman
+	- Dostupno na linku: https://www.getpostman.com/
+
+- MySql Server i MySQL Workbench
+	- Instalirati ih pomocu MySQLInstaller, koji je dostupan na linku: https://dev.mysql.com/downloads/installer/
+
+- Jdbc connector
+	- Dostupno na linku: https://dev.mysql.com/downloads/connector/j/ 
+	- Kopirati jar fajl u C:\Program Files\glassfish5\glassfish\lib

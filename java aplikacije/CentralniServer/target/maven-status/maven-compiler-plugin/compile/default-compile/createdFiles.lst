@@ -1,0 +1,12 @@
+com\mycompany\centralniserver\resources\MestoApi.class
+jms\JMSSender.class
+com\mycompany\centralniserver\resources\OmiljeniApi.class
+com\mycompany\centralniserver\resources\AudioSnimakApi.class
+com\mycompany\centralniserver\JAXRSConfiguration.class
+com\mycompany\centralniserver\resources\OcenaApi.class
+Enums\TipPoruke.class
+com\mycompany\centralniserver\resources\SlusanjeApi.class
+com\mycompany\centralniserver\resources\KorisnikApi.class
+com\mycompany\centralniserver\resources\DohvatiApi.class
+com\mycompany\centralniserver\resources\KategorijaApi.class
+com\mycompany\centralniserver\resources\PaketApi.class

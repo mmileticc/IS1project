@@ -1,12 +1,15 @@
 package Entiteti;
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -34,6 +37,15 @@ public class AudioSnimak {
 
     @Column(name = "vlasnikId", nullable = false)
     private int vlasnikId;
+    
+    @OneToMany(mappedBy = "audio", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Ocena> ocene;
+
+    @OneToMany(mappedBy = "audio", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Omiljeni> omiljeni;
+    
+    @OneToMany(mappedBy = "audio", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Slusanje> slusanja;
 
     public int getIdSnimka() {
         return idSnimka;

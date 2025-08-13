@@ -2,7 +2,9 @@ package Entiteti;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -39,6 +42,9 @@ public class AudioSnimak {
     @ManyToOne(optional = false)
     @JoinColumn(name = "VlasnikId", referencedColumnName = "IdK", nullable = false)
     private Korisnik vlasnik;
+    
+    @OneToMany(mappedBy = "audioSnimak", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<AudioSnimakKategorija> kategorije;
 
     public int getIdSnimka() {
         return idSnimka;
@@ -78,5 +84,12 @@ public class AudioSnimak {
 
     public void setVlasnik(Korisnik vlasnik) {
         this.vlasnik = vlasnik;
+    }
+    public List<AudioSnimakKategorija> getKategorije() {
+    return kategorije;
+    }
+
+    public void setKategorije(List<AudioSnimakKategorija> kategorije) {
+        this.kategorije = kategorije;
     }
 }
